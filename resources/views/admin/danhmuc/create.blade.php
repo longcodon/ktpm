@@ -22,7 +22,55 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Mô tả</label>
                     <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="mô tả">
+                    @error('descriptiondescription')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                   </div>
+
+                  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">tác giả </label>
+                    <input type="text" name="author " class="form-control" id="exampleInputEmail1" placeholder="nhập tiêu đề">
+
+                    @error('author')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+
+                   
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Người soạn  </label>
+                    <input type="text" name="transcribed " class="form-control" id="exampleInputEmail1" placeholder="nhập tiêu đề">
+
+                    @error('author')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+
+
+                
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">nước  </label>
+                    <input type="text" name="country " class="form-control" id="exampleInputEmail1" placeholder="nhập tiêu đề">
+
+                    @error('country')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+
+
+                 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">giá tiền  </label>
+                    <input type="text" name="price " class="form-control" id="exampleInputEmail1" placeholder="nhập tiêu đề">
+
+                    @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+
+                  
+
                   <div class="form-group">
                     <label for="exampleInputFile">File ảnh</label>
                     <div class="input-group">
@@ -33,6 +81,9 @@
                     
                     </div>
                   </div>
+
+
+
                   <div class="form-check">
                     <input type="checkbox" value="1" name="status" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">trạng thái</label>

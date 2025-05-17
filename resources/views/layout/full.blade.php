@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>That Sky Shop Clone</title>
-  <link rel="stylesheet" href="{{asset('frontend/index.css')}}" />
-  <link rel="stylesheet" href="{{asset('frontend/product.css')}}" />
+  <link rel="stylesheet" href="{{asset('frontend/css/index.css')}}" />
+  <link rel="stylesheet" href="{{asset('frontend/css/product2.css')}}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="logo"><span>KChip</span>Shop</div>
     <nav id="main-nav">
-        <a href="#">Trang Chủ</a>
-        <a href="#">Sản Phẩm</a>
+        <a href="{{ route('welcome') }}">Trang Chủ</a>
+        <a href="{{ route('full',['tat-ca-san']) }}">Sản Phẩm</a>
         <a href="#"class="coming-soon">Dịch Vụ</a>
         <a href="#"class="coming-soon">Diễn Đàn</a>
     </nav>
@@ -78,246 +78,21 @@
 
 <div class="product-gallery">
       <!-- SẢN PHẨM MẪU (có thể lặp để thêm) -->
+     @foreach($danhmuc as $key => $danhmuc) 
         <div class="product-card"
             data-category="Việt Nam"
             data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
+            onclick="openModal('{{ $danhmuc->title }}', '/public/images/suzume.png', '{{ $danhmuc->description }}', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
             <div class="product-tag">KChip</div> 
             <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
+                <img src="{{ asset('frontend/images/suzume.png') }}" alt="Áo Choàng Trái Đất" />
             </div>
-            <h4>Áo Choàng Trái Đất</h4>
+            <h4> '{{ $danhmuc->title ?? 'Không có tên' }}',  </h4>
             <div class="product-price">129.000 ₫</div>
             <button class="price-btn">Xem sản phẩm</button>
         </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
-        <div class="product-card"
-            data-category="Việt Nam"
-            data-transcriber="KChip"
-            onclick="openModal('Áo Choànggg Trái Đất', '/public/images/suzume.png', 'Chiếc áo choàng biểu tượng thiên nhiên. Lợi nhuận được chuyển đến dự án môi trường.', '129.000 ₫', 'ShinKai Makoto', 'KChip', 'https://www.youtube.com/embed/mkA2XJmNTO8')">
-            <div class="product-tag">KChip</div> 
-            <div class="product-image">
-                <img src="/public/images/suzume.png" alt="Áo Choàng Trái Đất" />
-            </div>
-            <h4>Áo Choàng Trái Đất</h4>
-            <div class="product-price">129.000 ₫</div>
-            <button class="price-btn">Xem sản phẩm</button>
-        </div>
+        
+      @endforeach
 
       <!-- THÊM NHIỀU DIV .product-card NẾU CẦN -->
 </div>
@@ -371,8 +146,8 @@
         
         <!-- Thông tin sản phẩm -->
         <div class="modal-info">
-          <h2 id="modal-title">Tên sản phẩm</h2>
-          <p id="modal-description">Mô tả sản phẩm chi tiết.</p>
+          <h2 id="modal-title"> '{{ $danhmuc->title ?? 'Không có tên' }}', </h2>
+          <p id="modal-description">{{ $danhmuc->description }}</p>
           <p><strong>Tác giả:</strong> <span id="modal-author"></span></p>
           <p><strong>Người soạn:</strong> <span id="modal-transcriber"></span></p>
           <p><strong>Giá:</strong> <span id="modal-price"></span></p>
@@ -412,8 +187,8 @@
   
   
    
-  <script src="index.js"></script>
-  <script src="product.js"></script>
+  <script src="{{asset('frontend/js/index.js')}}"></script>
+  <script src="{{asset('frontend/js/product2.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

@@ -6,6 +6,7 @@ use App\Http\Controllers\EvenController;
 use App\Http\Controllers\FullController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\DanhmucController; 
+use App\Http\Controllers\WelcomeController;
 
 
 
@@ -20,9 +21,9 @@ use App\Http\Controllers\DanhmucController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/',[App\Http\Controllers\WelcomeController::class,'index'])->name('welcome');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

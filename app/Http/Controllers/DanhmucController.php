@@ -12,7 +12,8 @@ class DanhmucController extends Controller
      */
     public function index()
     {
-        $danhmuc = Danhmuc::orderBy('id','DESC')->get();
+        // $danhmuc = Danhmuc::orderBy('id','DESC')->get();
+        $danhmuc=Danhmuc::all();
         return view('admin.danhmuc.index',compact('danhmuc'));
     }
 
@@ -53,7 +54,12 @@ class DanhmucController extends Controller
         $danhmuc->description=$data['description'];
         $danhmuc->status=$data['status'];
         $danhmuc->slug = Str::slug($data['title']);
-        
+        $danhmuc->country=$data['country'];
+        $danhmuc->author=$data['author'];
+        $danhmuc->transcribed=$data['transcribed'];
+        $danhmuc->price=$data['price'];
+
+
         $get_image = $request->image;
         $path = 'uploads/danhmuc/';
         $get_name_image = $get_image->getClientOriginalName(); 

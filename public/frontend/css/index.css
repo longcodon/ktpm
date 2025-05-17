@@ -749,3 +749,38 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     border-radius: 8px;
   }
+
+
+
+  .button-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00c37e, #00d8a7);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  opacity: 0.9;
+}

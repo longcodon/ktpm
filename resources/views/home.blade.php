@@ -231,7 +231,7 @@
             <a href="{{ route('danhmuc.index') }}" class="nav-link ">
               <i class="nav-icon fas fa-folder"></i>
               <p>
-                Danh mục sản phẩm 
+                  Sản phẩm
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -239,7 +239,7 @@
               <li class="nav-item">
                 <a href="{{ route('danhmuc.create') }}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm danh mục</p>
+                  <p>Thêm sản phẩm</p>
                 </a>
               </li>
             </ul>
@@ -248,7 +248,7 @@
               <li class="nav-item">
                 <a href="{{ route('danhmuc.index') }}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> danh mục</p>
+                  <p>danh sách sản phẩm </p>
                 </a>
               </li>
             </ul>
