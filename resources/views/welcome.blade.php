@@ -112,22 +112,31 @@
   <section class="product-gallery-section">
     <h2 class="section-title">Sản Phẩm</h2>
     <div class="product-gallery">
-     @foreach($danhmuc as $key => $danhmuc)
-<div class="product-card" onclick="openModal(
-    '{{ $danhmuc->title ?? 'Không có tên' }}', 
-    '{{ $danhmuc->image_path ?? '/images/default.png' }}', 
-    '{{ $danhmuc->description ?? 'Đang cập nhật mô tả' }}', 
-    // '{{ isset($product->price) ? number_format($product->price, 0, ',', '.').' ₫' : 'Liên hệ' }}', 
-    // '{{ $product->author ?? 'KChip' }}', 
-    // '{{ $product->brand ?? 'KChipShop' }}', 
-    // '{{ $product->video_url ?? '' }}'
-)">
-    <div class="product-image">
-        <img src="uploads/danhmuc/default.png') }}" alt="{{ $danhmuc->name ?? '' }}" />
+    @foreach($danhmuc as $key => $item)
+    @php
+        $videoId = \Illuminate\Support\Str::after($item->link, 'v=');
+      //   print($videoId); 
+      // print($item->link);
+    @endphp
+
+    <div class="product-card" onclick="openModal(
+        '{{ $item->title ?? 'Không có tên' }}',
+        '{{ $item->image ? asset('uploads/danhmuc/'.$item->image) : asset('/images/default.png') }}',
+        '{{ $item->description ?? 'Đang cập nhật mô tả' }}',
+        '{{ isset($item->price) ? number_format($item->price, 0, ',', '.').' ₫' : 'Liên hệ' }}',
+        '{{ $item->author ?? 'Chưa rõ' }}',
+        '{{ $item->transcribed ?? 'KChipShop' }}',
+        'https://www.youtube.com/embed/{{ $videoId }}'
+
+
+    )">
+        <div class="product-image">
+            <img src="{{ $item->image ? asset('uploads/danhmuc/'.$item->image) : asset('/images/default.png') }}"
+                 alt="{{ $item->title ?? '' }}" />
+        </div>
+        <h4>{{ $item->title ?? 'Sản phẩm mới' }}</h4>
+        <button class="price-btn">Xem sản phẩm</button>
     </div>
-    <h4>{{ $danhmuc->title ?? 'Sản phẩm mới' }}</h4>
-    <button class="price-btn">Xem sản phẩm</button>
-</div>
 @endforeach
     </div>
 
@@ -226,6 +235,6 @@
    
   <script src="{{ asset('frontend/js/index.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  
 </body>
 </html>

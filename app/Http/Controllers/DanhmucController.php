@@ -33,9 +33,13 @@ class DanhmucController extends Controller
         $data=$request->validate([
             'title'=>'required|unique:danhmuc|max:255',
             'description'=>'required|max:255',
-            'image'=>'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required',
-            
+            'country'=>'required',
+            'author' => 'required',
+            'transcribed' => 'required',
+            'price' => 'required',
+            'link' => 'required',
 
 
         ],[
@@ -44,6 +48,7 @@ class DanhmucController extends Controller
             'image.required'=>'vui lòng tải ảnh lên',
             'title.unique' => 'Tiêu đề đã có vui lòng nhập không trùng',
              'status.required'=>'check status',
+            //   'country.required'=>'required',
             
 
         ]);
@@ -58,6 +63,7 @@ class DanhmucController extends Controller
         $danhmuc->author=$data['author'];
         $danhmuc->transcribed=$data['transcribed'];
         $danhmuc->price=$data['price'];
+        $danhmuc->link=$data['link'];
 
 
         $get_image = $request->image;
@@ -101,13 +107,19 @@ class DanhmucController extends Controller
             'description'=>'required|max:255',
             'title'=>'required',
             'status' => 'required',
+            'country'=>'required',
+            'author' => 'required',
+            'transcribed' => 'required',
+            'price' => 'required',
+            'link' => 'required',
+
             
 
 
         ],[
   
             'description.required'=>'Mô tả không được bỏ trống',
-        'title.required'=>'Tiêu đềđề không được bỏ trống',
+            'title.required'=>'Tiêu đềđề không được bỏ trống',
         
             'status.required'=>'check status',
 
@@ -119,6 +131,11 @@ class DanhmucController extends Controller
         $danhmuc->description=$data['description'];
         $danhmuc->status=$data['status'];
         $danhmuc->slug = Str::slug($data['title']);
+        $danhmuc->country=$data['country'];
+        $danhmuc->author=$data['author'];
+        $danhmuc->transcribed=$data['transcribed'];
+        $danhmuc->price=$data['price'];
+        $danhmuc->link =$data['link'];
         
        
         if($request->image){
